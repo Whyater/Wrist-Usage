@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Clock face with a return arrow: "time until the limit resets". Pre-tinted to the tertiary text color. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M20.2,12 A8.2,8.2 0 1 1 17.8,6.2"
+        android:strokeColor="#8A8A90"
+        android:strokeLineCap="round"
+        android:strokeWidth="2.2" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M17.8,2.6 V6.4 H14"
+        android:strokeColor="#8A8A90"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="2.2" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M12,7.8 V12 L15,13.8"
+        android:strokeColor="#8A8A90"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="2.2" />
+</vector>
