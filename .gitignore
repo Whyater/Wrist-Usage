@@ -1,0 +1,35 @@
+# Build output
+build/
+.gradle/
+.kotlin/
+*.apk
+*.aab
+local.properties
+captures/
+.cxx/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# OS
+.DS_Store
+
+# Private notes and AI tooling (never public)
+CLAUDE.md
+AGENTS.md
+GEMINI.md
+.claude/
+.cursor/
+.codex/
+.obsidian/
+notes/
+.env
+.env.*
