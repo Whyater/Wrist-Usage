@@ -33,3 +33,8 @@ GEMINI.md
 notes/
 .env
 .env.*
+
+# Release signing (kept on the build machine only)
+keystore.properties
+*.jks
+*.keystore

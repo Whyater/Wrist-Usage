@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Track: 270 degree arc, open at the bottom. -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M37.03,70.97 A24,24 0 1 1 70.97,70.97"
+        android:strokeColor="#2E2E33"
+        android:strokeLineCap="round"
+        android:strokeWidth="7" />
+    <!-- Used share, about 62 percent. -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M37.03,70.97 A24,24 0 0 1 66.9,33.76"
+        android:strokeColor="#E07A5F"
+        android:strokeLineCap="round"
+        android:strokeWidth="7" />
+    <path
+        android:fillColor="#F2F2F2"
+        android:pathData="M54,54m-3.2,0a3.2,3.2 0 1 1 6.4,0a3.2,3.2 0 1 1 -6.4,0" />
+</vector>

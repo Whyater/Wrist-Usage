@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The launcher gauge cropped to its own bounds, for use inside the app. Same shapes as ic_launcher_foreground. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="60dp"
+    android:height="60dp"
+    android:viewportWidth="60"
+    android:viewportHeight="60">
+    <group
+        android:translateX="-24"
+        android:translateY="-24">
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M37.03,70.97 A24,24 0 1 1 70.97,70.97"
+            android:strokeColor="#2E2E33"
+            android:strokeLineCap="round"
+            android:strokeWidth="7" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M37.03,70.97 A24,24 0 0 1 66.9,33.76"
+            android:strokeColor="#E07A5F"
+            android:strokeLineCap="round"
+            android:strokeWidth="7" />
+        <path
+            android:fillColor="#F2F2F2"
+            android:pathData="M54,54m-3.2,0a3.2,3.2 0 1 1 6.4,0a3.2,3.2 0 1 1 -6.4,0" />
+    </group>
+</vector>

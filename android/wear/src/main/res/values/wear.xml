@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="UnusedResources">
+    <!-- Read by Google Play services so the phone app can find this watch through CapabilityClient. -->
+    <string-array name="android_wear_capabilities">
+        <item>wristusage_watch</item>
+    </string-array>
+</resources>
