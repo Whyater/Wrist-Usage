@@ -55,7 +55,7 @@ def _gh_error(exc):
 
 def _repo_paths():
     root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    props = os.path.join(os.path.dirname(root), "watch", "local.properties")
+    props = os.path.join(os.path.dirname(root), "android", "local.properties")
     plist = os.path.expanduser("~/Library/LaunchAgents/%s.plist" % LABEL)
     return root, props, plist
 
@@ -207,10 +207,20 @@ def setup(args):
                 return 1
     print(raw)
     print("Next steps:")
-    print("cd watch && ./gradlew :app:installDebug")
-    print("Connect the watch over adb before installing.")
+    print("Paste the URL above into the Wrist Usage phone app (Setup > Save).")
+    print("The phone sends it to the watch. Run 'wrist-usage url' to see it again.")
     print("Logs: ~/Library/Logs/wrist-usage.log")
     print("Re-run setup if you move this folder.")
+    return 0
+
+
+def show_url():
+    """Print the snapshot URL that the phone app needs."""
+    config = _load_config()
+    if not config or not config.get("raw_url"):
+        print("Run setup first", file=sys.stderr)
+        return 1
+    print(config["raw_url"])
     return 0
 
 

@@ -193,7 +193,7 @@ class SetupAndServerTests(unittest.TestCase):
     def test_setup_dry_run_lists_plist_and_writes_nothing(self):
         root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         env = os.environ.copy()
-        local_properties = os.path.join(os.path.dirname(root), "watch", "local.properties")
+        local_properties = os.path.join(os.path.dirname(root), "android", "local.properties")
         before_properties = read_if_exists(local_properties)
         with tempfile.TemporaryDirectory() as td:
             env["HOME"] = td
@@ -315,6 +315,22 @@ class SetupAndServerTests(unittest.TestCase):
             self.assertEqual(code, 1)
             self.assertTrue(os.path.exists(config))
             self.assertIn("delete failed", stderr.getvalue())
+
+    def test_url_prints_saved_raw_url_or_asks_for_setup(self):
+        with tempfile.TemporaryDirectory() as td:
+            config = os.path.join(td, "config.json")
+            with mock.patch.object(publish_module, "config_path", return_value=config):
+                stderr = io.StringIO()
+                with contextlib.redirect_stderr(stderr):
+                    self.assertEqual(publish_module.show_url(), 1)
+                self.assertIn("Run setup first", stderr.getvalue())
+                with open(config, "w") as handle:
+                    json.dump({"raw_url": "https://gist.invalid/o/g/raw/usage.json"}, handle)
+                stdout = io.StringIO()
+                with contextlib.redirect_stdout(stdout):
+                    self.assertEqual(publish_module.show_url(), 0)
+                expected = "https://gist.invalid/o/g/raw/usage.json"
+                self.assertEqual(stdout.getvalue().strip(), expected)
 
 
 if __name__ == "__main__":

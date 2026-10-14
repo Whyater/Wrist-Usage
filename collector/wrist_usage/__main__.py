@@ -4,7 +4,7 @@ import argparse
 import json
 import sys
 
-from .publish import publish, setup, uninstall
+from .publish import publish, setup, show_url, uninstall
 from .server import serve
 from .snapshot import collect_snapshot
 
@@ -21,6 +21,7 @@ def main(argv=None):
     setup_parser.add_argument("--dry-run", action="store_true")
     setup_parser.add_argument("--no-launchd", action="store_true")
     subparsers.add_parser("publish")
+    subparsers.add_parser("url")
     uninstall_parser = subparsers.add_parser("uninstall")
     uninstall_parser.add_argument("--delete-gist", action="store_true")
     args = parser.parse_args(argv)
@@ -34,6 +35,8 @@ def main(argv=None):
         return setup(args)
     if args.command == "publish":
         return publish()
+    if args.command == "url":
+        return show_url()
     return uninstall(args)
 
 
